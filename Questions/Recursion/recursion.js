@@ -9,4 +9,14 @@ const fact = (n) => {
   return n * fact(n - 1);
 };
 
-console.log(fact(4));
+console.log("Factorial is:", fact(4));
+
+// 2)Implement a recursive function to generate the nth Fibonacci number.
+
+const fibo = (n) => {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return fibo(n - 1) + fibo(n - 2);
+};
+console.log("Fibonacci:", fibo(5));
