@@ -20,3 +20,15 @@ const fibo = (n) => {
   return fibo(n - 1) + fibo(n - 2);
 };
 console.log("Fibonacci:", fibo(5));
+
+// 3)Write a recursive function to reverse a string.
+
+const reverseString = (str, reversed = "") => {
+  if (!str) {
+    return reversed;
+  }
+  return reverseString(str.slice(0, -1), reversed + str.slice(-1));
+};
+const newString = reverseString("abcdef");
+
+console.log("Reversed String:", newString);
