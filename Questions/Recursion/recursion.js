@@ -55,3 +55,16 @@ let end = arr.length - 1;
 let mid = Math.floor((start + end) / 2);
 const data = binarySearch(arr, 9, start, mid, end);
 console.log("data", data);
+
+// 5)Write a recursive function to find the sum of all elements in an array.
+
+const sumOfArray = (arr) => {
+  if (arr.length === 1) {
+    return arr[0];
+  }
+  let temp = arr[arr.length - 1];
+  arr.length = arr.length - 1;
+  return temp + sumOfArray(arr);
+};
+
+console.log("Sum of array is:", sumOfArray([2, 3, 4, 7, 4, -3]));
