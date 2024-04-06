@@ -32,3 +32,26 @@ const reverseString = (str, reversed = "") => {
 const newString = reverseString("abcdef");
 
 console.log("Reversed String:", newString);
+
+// 4) Implement binary search using recursion on a sorted array.
+
+const binarySearch = (arr, val, start, mid, end) => {
+  if (start > end) {
+    return -1;
+  }
+  mid = Math.floor((start + end) / 2);
+  if (arr[mid] === val) {
+    return arr.indexOf(val);
+  }
+  if (arr[mid] > val) {
+    return binarySearch(arr, val, start, mid, mid - 1);
+  } else {
+    return binarySearch(arr, val, mid + 1, mid, end);
+  }
+};
+const arr = [2, 4, 5, 7, 9];
+let start = 0;
+let end = arr.length - 1;
+let mid = Math.floor((start + end) / 2);
+const data = binarySearch(arr, 9, start, mid, end);
+console.log("data", data);
