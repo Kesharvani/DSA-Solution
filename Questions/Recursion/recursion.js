@@ -68,3 +68,24 @@ const sumOfArray = (arr) => {
 };
 
 console.log("Sum of array is:", sumOfArray([2, 3, 4, 7, 4, -3]));
+
+// 6)Create a recursive function to count the occurrences of a given element in an array.
+
+const countOfOccuranceInArray = (count, element, array) => {
+  if (array.length === 0) {
+    return;
+  }
+  let temp = array[array.length - 1];
+  if (temp === element) count[0]++;
+  array.length = array.length - 1;
+  return countOfOccuranceInArray(count, element, array);
+};
+
+const callingFunction = () => {
+  let count = [0];
+  const array = [3, 4, 2, 45, 6, 7, 2, 2];
+  const element = 2;
+  countOfOccuranceInArray(count, element, array);
+  console.log("Occurance of the element is:", count[0]);
+};
+callingFunction();
