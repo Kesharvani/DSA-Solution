@@ -114,3 +114,29 @@ const callingFunction2 = () => {
   }
 };
 callingFunction2();
+
+// Write a recursive function to check if a given string is a palindrome.
+
+const isPalindrom = (start, end, str, result) => {
+  if (start > end) {
+    return;
+  }
+  if (str[start] != str[end]) {
+    result[0] = 0;
+    return;
+  }
+  isPalindrom(start + 1, end - 1, str, result);
+};
+
+const callingFunction3 = () => {
+  const result = [1];
+  const str = "madam";
+  isPalindrom(0, str.length - 1, str, result);
+
+  if (result[0] === 1) {
+    console.log("Yes, It is palindrom");
+  } else {
+    console.log("This string is not palindrom");
+  }
+};
+callingFunction3();
