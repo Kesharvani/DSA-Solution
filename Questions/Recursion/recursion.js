@@ -89,3 +89,28 @@ const callingFunction = () => {
   console.log("Occurance of the element is:", count[0]);
 };
 callingFunction();
+
+// 7)Implement a recursive function to compute the power of a number.
+
+const powerOfNumber = (base, exponent, result) => {
+  if (exponent === 0) {
+    return;
+  }
+  result[0] = result[0] * base;
+  exponent > 0
+    ? powerOfNumber(base, exponent - 1, result)
+    : powerOfNumber(base, exponent + 1, result);
+};
+
+const callingFunction2 = () => {
+  const result = [1];
+  const base = 3;
+  const exponent = -4;
+  powerOfNumber(base, exponent, result);
+  if (exponent >= 0) {
+    console.log("Power of the number is:", result[0]);
+  } else {
+    console.log("Power of the number is:", 1 / result[0]);
+  }
+};
+callingFunction2();
